@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home page</title>
+<style>
+
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical;
+  font-size:12pt;
+  background-color:#ECD59F;
+  font-family:"Times New Roman", Times, serif; /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 10pt;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  width: 750px;
+  height: 750px;
+  border-radius: 5px;
+  background-color:#FD8552;
+  padding:40px;
+  margin-left: 300px;
+  margin-bottom:70px;
+  margin-top: 40px;
+  font-size:12pt;
+  color:#041B2D; 
+  font-family:Arial, Helvetica, sans-serif;
+}
+.heading{
+  font-family:"Comic Sans MS", cursive, sans-serif;
+  color:#384E78;
+}
+</style>
+</head>
+<body>
+  <h1 align="center" class="heading">Car Condition Classifier</h1>
+<div class="container">
+  <form action="/classifier" method="post" enctype="multipart/form-data">
+    <label for="carprice">Price Of Car</label>
+    <select id="carprice" name="carprice">
+      <option value="3">Very High</option>
+      <option value="0">High</option>
+      <option value="2">Medium</option>
+      <option value="1">Low</option>
+    </select>
+    <br><br>
+
+    <label for="doors">Number Of Doors</label>
+    <select id="doors" name="doors">
+      <option value="3">Two</option>
+      <option value="2">Three</option>
+      <option value="1">Four</option>
+      <option value="0">More</option>
+    </select>
+    <br><br>
+
+    <label for="main">Price Of The Maintenance</label>
+    <select id="main" name="main">
+      <option value="3">Very High</option>
+      <option value="0">High</option>
+      <option value="2">Medium</option>
+      <option value="1">Low</option>
+    </select>
+    <br><br>
+
+    <label for="main">Capacity In Terms Of Persons To Carry</label>
+    <select id="person" name="person">
+      <option value="2">Two</option>
+      <option value="0">Four</option>
+      <option value="1">More</option>
+    </select>
+    <br><br>
+
+    <label for="main">The Size Of Luggage Boot</label>
+    <select id="luggage" name="luggage">
+      <option value="2">Small</option>
+      <option value="1">Medium</option>
+      <option value="0">Big</option>
+    </select>
+    <br><br>
+
+    <label for="main">Estimated Safety Of The Car</label>
+    <select id="safety" name="safety">
+      <option value="1">Low</option>
+      <option value="2">Medium</option>
+      <option value="0">High</option>
+    </select>
+    <br><br>
+    <input type="submit" value="Submit">
+    <h1 class="heading">Car Condition is {{output}} </h1>
+  </form>
+</div>
+</body>
+</html>
